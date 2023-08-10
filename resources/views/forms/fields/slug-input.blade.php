@@ -40,6 +40,8 @@
                     this.state = this.stateInitial;
                 }
 
+                $wire.set('{{ $getStatePath() }}', this.state)
+
                 this.detectModification();
 
                 this.editing = false;
