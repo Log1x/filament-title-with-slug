@@ -123,16 +123,17 @@
                             inline-flex items-center justify-center
                             hover:underline hover:text-primary-500
                             dark:hover:text-primary-400
+                            gap-1
                         "
                         :class="context !== 'create' && modified ? 'text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-700 px-1 rounded-md' : ''"
                     >
                         <span class="mr-1">{{ $getState() }}</span>
 
-                        <x-heroicon-o-pencil-square
+                        <x-heroicon-m-pencil-square
                             stroke-width="2"
                             class="
                                 h-4 w-4
-                                text-primary-600 dark:text-primary-500
+                                text-primary-600 dark:text-primary-400
                             "
                         />
 
