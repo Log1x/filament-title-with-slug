@@ -180,7 +180,7 @@
 
                 <div
                     x-show="editing"
-                    class="flex space-x-2"
+                    class="flex space-x-2 gap-2"
                     style="display: none;"
                 >
 
