@@ -61,7 +61,7 @@ class TitleWithSlugInput
             ->disabled($titleIsReadonly)
             ->autofocus($titleAutofocus)
             ->live(true)
-            ->disableAutocomplete()
+            ->autocomplete(false)
             ->rules($titleRules)
             ->extraInputAttributes($titleExtraInputAttributes ?? ['class' => 'text-xl font-semibold'])
             ->beforeStateDehydrated(fn (TextInput $component, $state) => $component->state(trim($state)))
@@ -103,7 +103,7 @@ class TitleWithSlugInput
         }
 
         if (! $titleLabel) {
-            $textInput->disableLabel();
+            $textInput->hiddenLabel();
         }
 
         if ($titleLabel) {
@@ -137,7 +137,7 @@ class TitleWithSlugInput
             // Default TextInput methods
             ->readOnly($slugIsReadonly)
             ->live(true)
-            ->disableAutocomplete()
+            ->autocomplete(false)
             ->disableLabel()
             ->regex($slugRuleRegex)
             ->rules($slugRules)
