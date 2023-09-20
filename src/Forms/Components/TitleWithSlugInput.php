@@ -122,7 +122,7 @@ class TitleWithSlugInput
             ->slugInputVisitLinkLabel($urlVisitLinkLabel)
             ->slugInputUrlVisitLinkVisible($urlVisitLinkVisible)
             ->slugInputContext(fn ($context) => $context === 'create' ? 'create' : 'edit')
-            ->slugInputRecordSlug(fn (?Model $record) => $record?->getAttributeValue($fieldSlug))
+            ->slugInputRecordSlug(fn (?Model $record) => data_get($record?->attributesToArray(), $fieldSlug))
             ->slugInputModelName(
                 fn (?Model $record) => $record
                     ? Str::of(class_basename($record))->headline()
