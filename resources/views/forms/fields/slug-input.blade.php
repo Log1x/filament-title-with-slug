@@ -198,7 +198,7 @@
 
                     <x-filament::link
                         x-show="context === 'edit' && modified"
-                        x-on:click="resetModification()"
+                        x-on:click.prevent="resetModification()"
                         class="cursor-pointer ml-4"
                         icon="heroicon-o-arrow-path"
                         color="gray"
@@ -209,7 +209,7 @@
                     </x-filament::link>
 
                     <x-filament::link
-                        x-on:click="cancelModification()"
+                        x-on:click.prevent="cancelModification()"
                         class="cursor-pointer"
                         icon="heroicon-o-x-mark"
                         color="gray"
