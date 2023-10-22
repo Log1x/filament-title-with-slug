@@ -129,13 +129,7 @@
                     >
                         <span class="mr-1">{{ $getState() }}</span>
 
-                        <x-heroicon-m-pencil-square
-                            stroke-width="2"
-                            class="
-                                h-4 w-4
-                                text-primary-600 dark:text-primary-400
-                            "
-                        />
+                        @svg('heroicon-m-pencil-square', 'h-4 w-4 text-primary-600 dark:text-primary-400', ['stroke-width' => '2'])
 
                         <span class="sr-only">{{ trans('filament-title-with-slug::package.permalink_action_edit') }}</span>
 
