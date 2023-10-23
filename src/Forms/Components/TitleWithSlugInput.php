@@ -78,7 +78,7 @@ class TitleWithSlugInput
                     $fieldSlug,
                     $titleAfterStateUpdated,
                 ) {
-                    $slugAutoUpdateDisabled = $get('slug_auto_update_disabled');
+                    $slugAutoUpdateDisabled = $get($fieldSlug . '_slug_auto_update_disabled');
 
                     if ($context === 'edit' && filled($record)) {
                         $slugAutoUpdateDisabled = true;
@@ -159,7 +159,7 @@ class TitleWithSlugInput
 
                     $set($fieldSlug, self::slugify($slugSlugifier, $text));
 
-                    $set('slug_auto_update_disabled', true);
+                    $set($fieldSlug . '_slug_auto_update_disabled', true);
 
                     if ($slugAfterStateUpdated) {
                         $component->evaluate($slugAfterStateUpdated);
@@ -176,7 +176,7 @@ class TitleWithSlugInput
             : $slugInput->unique(ignorable: fn (?Model $record) => $record);
 
         /** Input: "Slug Auto Update Disabled" (Hidden) */
-        $hiddenInputSlugAutoUpdateDisabled = Hidden::make('slug_auto_update_disabled')
+        $hiddenInputSlugAutoUpdateDisabled = Hidden::make($fieldSlug . '_slug_auto_update_disabled')
             ->dehydrated(false);
 
         /** Group */
